@@ -159,7 +159,7 @@ body {
 }
 
 .nav-logo { display: flex; align-items: center; text-decoration: none; }
-.logo-img { height: 44px; width: auto; }
+.logo-img { height: 60px; width: auto; }
 
 .nav-menu {
   display: flex;
