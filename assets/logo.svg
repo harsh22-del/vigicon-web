@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" width="200" height="60">
+  <rect width="200" height="60" fill="#010038"/>
+  <polygon points="10,10 30,10 20,50" fill="#F39422"/>
+  <polygon points="22,10 42,10 32,50" fill="#537EC5" opacity="0.8"/>
+  <text x="50" y="38" font-family="Arial Black, sans-serif" font-size="22" font-weight="900" fill="#FFFFFF" letter-spacing="1">VIGICON</text>
+  <text x="50" y="52" font-family="Arial, sans-serif" font-size="9" fill="#537EC5" letter-spacing="3">ENTERPRISES</text>
+</svg>
