@@ -12,15 +12,15 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --primary:     #010038;
-  --secondary:   #293A80;
-  --accent:      #537EC5;
+  --primary:     #ffffff;
+  --secondary:   #d1d3db;
+  --accent:      #F39422;
   --highlight:   #F39422;
-  --white:       #FFFFFF;
-  --light-bg:    #f4f6fb;
+  --dark-blue:   #001d7d;
+  --light-bg:    #ffffff;
   --text-dark:   #0d0d2b;
-  --text-mid:    #4a5070;
-  --text-light:  #8892b0;
+  --text-mid:    #ffffff;
+  --text-light:  #001d7d;;
   --glass:       rgba(255,255,255,0.06);
   --glass-border:rgba(255,255,255,0.12);
   --shadow:      0 20px 60px rgba(1,0,56,0.15);
@@ -63,7 +63,7 @@ body {
   font-family: 'Bebas Neue', sans-serif;
   font-size: clamp(2rem, 4vw, 3.2rem);
   line-height: 1.05;
-  color: var(--primary);
+  color: var(--text-light);
   margin-bottom: 1rem;
   letter-spacing: 0.02em;
 }
@@ -72,7 +72,7 @@ body {
 
 .section-sub {
   font-size: 1.05rem;
-  color: var(--text-mid);
+  color: var(--text-light);
   max-width: 640px;
   margin-bottom: 3rem;
 }
@@ -98,20 +98,20 @@ body {
   border-color: var(--highlight);
 }
 .btn-primary:hover {
-  background: #d97e15;
-  border-color: #d97e15;
+  background: var(--text-dark);
+  border-color: var(--text-dark);
   transform: translateY(-2px);
   box-shadow: 0 10px 30px rgba(243,148,34,0.35);
 }
 
 .btn-outline {
-  background: transparent;
-  color: var(--white);
+  background: var(--text-dark);
+  color: var(--primary);
   border-color: rgba(255,255,255,0.4);
 }
 .btn-outline:hover {
-  background: rgba(255,255,255,0.1);
-  border-color: var(--white);
+  background: var(--accent);
+  border-color: var(--text-dark);
   transform: translateY(-2px);
 }
 
@@ -121,7 +121,7 @@ body {
 }
 .btn-outline.dark:hover {
   background: var(--primary);
-  color: var(--white);
+  color: var(--dark-blue);
 }
 
 .btn-full { width: 100%; justify-content: center; }
@@ -143,7 +143,7 @@ body {
 }
 
 .navbar.scrolled {
-  background: rgba(1,0,56,0.97);
+  background: #ffffff;
   backdrop-filter: blur(20px);
   padding: 0.8rem 0;
   box-shadow: 0 4px 30px rgba(0,0,0,0.3);
@@ -162,12 +162,13 @@ body {
   display: flex; align-items: center; text-decoration: none; 
  }
 .logo-img { height: 70px; width: auto;
-/*filter:drop-shadow(1px 1px 2px rgba(247, 246, 243, 0.53));
-*/
-filter:brightness(1.3) contrast(3.2);
+filter:drop-shadow(0px 0px 0px rgba(247, 246, 243, 0.53));
+
+/*filter:brightness(0) contrast(1,3);*/
+
+
+ 
 }
-
-
 .nav-menu {
   display: flex;
   list-style: none;
@@ -176,7 +177,7 @@ filter:brightness(1.3) contrast(3.2);
 }
 
 .nav-link {
-  color: rgba(255,255,255,0.85);
+  color:var(--text-dark); ;
   text-decoration: none;
   font-size: 0.92rem;
   font-weight: 500;
@@ -193,9 +194,12 @@ filter:brightness(1.3) contrast(3.2);
   transition: var(--transition);
   border-radius: 2px;
 }
+/* Navigation Link Hover and Active States 
 .nav-link:hover, .nav-link.active {
-  color: var(--white);
+  color: var(--dark-blue );
+  
 }
+  */
 .nav-link:hover::after, .nav-link.active::after { width: 100%; }
 
 .hamburger {
@@ -210,7 +214,7 @@ filter:brightness(1.3) contrast(3.2);
 .hamburger span {
   display: block;
   width: 26px; height: 2px;
-  background: var(--white);
+  background: var(--dark-blue);
   border-radius: 2px;
   transition: var(--transition);
 }
@@ -293,13 +297,13 @@ filter:brightness(1.3) contrast(3.2);
   font-family: 'Bebas Neue', sans-serif;
   font-size: clamp(2.8rem, 5.5vw, 5rem);
   line-height: 1;
-  color: var(--white);
+  color: var(--dark-blue);
   margin-bottom: 1.5rem;
   letter-spacing: 0.02em;
 }
 
 .hero-sub {
-  color: rgba(255,255,255,0.65);
+  color: rgba(1, 8, 104, 0.65);
   font-size: 1.05rem;
   line-height: 1.75;
   margin-bottom: 2.5rem;
@@ -329,7 +333,7 @@ filter:brightness(1.3) contrast(3.2);
 }
 .stat-label {
   font-size: 0.75rem;
-  color: rgba(255,255,255,0.5);
+  color: #001d7d;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   font-weight: 500;
@@ -376,13 +380,13 @@ filter:brightness(1.3) contrast(3.2);
 
 .camera-icon-wrap {
   width: 110px; height: 110px;
-  background: linear-gradient(135deg, var(--secondary), var(--accent));
+  background: linear-gradient(135deg, var(--text-dark), var(--text-light));
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 2.8rem;
-  color: var(--white);
+  color: var(--accent);
   box-shadow: 0 0 60px rgba(83,126,197,0.5);
   z-index: 2;
   position: relative;
@@ -464,7 +468,7 @@ filter:brightness(1.3) contrast(3.2);
 }
 
 .service-card {
-  background: var(--white);
+  background: var(--dark-blue);
   border-radius: var(--radius);
   padding: 2rem;
   border: 1px solid rgba(83,126,197,0.1);
@@ -481,7 +485,7 @@ filter:brightness(1.3) contrast(3.2);
 .service-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 20px 50px rgba(1,0,56,0.1);
-  border-color: var(--accent);
+  border-color: var(--highlight);
 }
 .service-card::before {
   content: '';
@@ -496,7 +500,7 @@ filter:brightness(1.3) contrast(3.2);
 .card-icon {
   width: 56px; height: 56px;
   border-radius: 12px;
-  background: linear-gradient(135deg, rgba(83,126,197,0.1), rgba(1,0,56,0.06));
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.1), rgba(3, 3, 35, 0.06));
   display: flex; align-items: center; justify-content: center;
   font-size: 1.5rem;
   color: var(--accent);
@@ -511,7 +515,7 @@ filter:brightness(1.3) contrast(3.2);
 .service-card h3 {
   font-size: 1.05rem;
   font-weight: 700;
-  color: var(--primary);
+  color: var(--accent);
   margin-bottom: 0.6rem;
   line-height: 1.3;
 }
@@ -526,7 +530,7 @@ filter:brightness(1.3) contrast(3.2);
   bottom: 1.5rem; right: 1.5rem;
   width: 32px; height: 32px;
   border-radius: 50%;
-  background: rgba(83,126,197,0.1);
+  background: var(--primary);
   display: flex; align-items: center; justify-content: center;
   color: var(--accent);
   font-size: 0.8rem;
@@ -542,7 +546,7 @@ filter:brightness(1.3) contrast(3.2);
 /* ──── ABOUT ──── */
 .about {
   padding: 7rem 0;
-  background: var(--white);
+  background: var(--accent);
 }
 .about-grid {
   display: grid;
@@ -568,11 +572,11 @@ filter:brightness(1.3) contrast(3.2);
 .badge-ring-svg {
   position: absolute;
   inset: 0;
-  animation: rotate 20s linear infinite;
+  animation: rotate 15s linear infinite;
 }
 .about-icon-center {
   width: 120px; height: 120px;
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  background: linear-gradient(135deg, var(--text-dark), var(--dark-blue));
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -594,7 +598,7 @@ filter:brightness(1.3) contrast(3.2);
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  background: var(--light-bg);
+  background: var(--text-dark);
   border: 1px solid rgba(83,126,197,0.12);
   border-radius: 10px;
   padding: 0.75rem 1.25rem;
@@ -602,16 +606,16 @@ filter:brightness(1.3) contrast(3.2);
   font-weight: 600;
   color: var(--primary);
 }
-.af-card i { color: var(--highlight); }
+.af-i { color: var(--highlight); }
 
 .about-lead {
   font-size: 1.2rem;
   font-weight: 600;
-  color: var(--primary);
+  color: var(--text-dark);
   margin-bottom: 1rem;
 }
 .about-body {
-  color: var(--text-mid);
+  color: var(--text-dark);
   font-size: 0.95rem;
   margin-bottom: 1rem;
 }
@@ -628,9 +632,9 @@ filter:brightness(1.3) contrast(3.2);
   gap: 0.5rem;
   font-size: 0.9rem;
   font-weight: 600;
-  color: var(--secondary);
+  color: var(--text-light);
 }
-.value-item i { color: var(--highlight); font-size: 1rem; }
+.value-item i { color: var(--text-dark); font-size: 1rem; }
 
 /* ──── SERVICES ──── */
 .services {
@@ -675,12 +679,12 @@ filter:brightness(1.3) contrast(3.2);
   opacity: 1;
   transform: translateX(0);
 }
-.svc-item:hover { background: rgba(255,255,255,0.03); padding-left: 1rem; }
+.svc-item:hover { background: rgba(83, 112, 255, 0.216); padding-left: 1rem; }
 
 .svc-num {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 1.5rem;
-  color: rgba(255,255,255,0.15);
+  color: rgba(255, 141, 27, 0.548);
   letter-spacing: 0.05em;
 }
 .svc-item:hover .svc-num { color: var(--highlight); }
@@ -713,9 +717,9 @@ filter:brightness(1.3) contrast(3.2);
 }
 .svc-tags span {
   font-size: 0.75rem;
-  color: rgba(255,255,255,0.5);
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.1);
+  color: rgba(255, 255, 255, 0.954);
+  background: rgb(1, 1, 96);
+  border: 1px solid rgba(0, 0, 0, 0.588);
   border-radius: 50px;
   padding: 0.2rem 0.75rem;
   font-weight: 500;
@@ -767,7 +771,7 @@ filter:brightness(1.3) contrast(3.2);
   top: -8px; right: 30%;
   font-family: 'Bebas Neue', sans-serif;
   font-size: 0.85rem;
-  color: var(--highlight);
+  color: var(--accent);
   background: var(--light-bg);
   padding: 0 4px;
 }
@@ -775,7 +779,7 @@ filter:brightness(1.3) contrast(3.2);
 .step-icon {
   width: 80px; height: 80px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  background: linear-gradient(135deg, var(--text-dark), var(--text-light));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -833,7 +837,7 @@ filter:brightness(1.3) contrast(3.2);
 .ci-icon {
   width: 50px; height: 50px;
   border-radius: 12px;
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  background: linear-gradient(135deg, var(--text-dark), var(--dark-blue));
   display: flex; align-items: center; justify-content: center;
   color: var(--highlight);
   font-size: 1.1rem;
@@ -845,14 +849,14 @@ filter:brightness(1.3) contrast(3.2);
   font-size: 0.72rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--text-light);
+  color: var(--text-dark);
   font-weight: 600;
   margin-bottom: 0.15rem;
 }
 .ci-value {
   font-size: 0.98rem;
   font-weight: 600;
-  color: var(--primary);
+  color: var(--text-light);
   text-decoration: none;
 }
 .ci-value:hover { color: var(--accent); }
@@ -948,7 +952,7 @@ filter:brightness(1.3) contrast(3.2);
 .footer-logo { height: 70px; margin-bottom: 1rem; }
 
 .footer-tagline {
-  color: rgba(255,255,255,0.55);
+  color: var(--text-light);
   font-size: 0.9rem;
   line-height: 1.7;
   font-style: italic;
@@ -960,10 +964,11 @@ filter:brightness(1.3) contrast(3.2);
 .footer-socials a {
   width: 36px; height: 36px;
   border-radius: 8px;
-  background: rgba(255,255,255,0.06);
+  background: 
+  rgba(160, 146, 237, 0.17);
   border: 1px solid rgba(255,255,255,0.1);
   display: flex; align-items: center; justify-content: center;
-  color: rgba(255,255,255,0.6);
+  color: var(--text-dark);
   font-size: 0.85rem;
   text-decoration: none;
   transition: var(--transition);
@@ -982,7 +987,7 @@ filter:brightness(1.3) contrast(3.2);
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--white);
+  color: var(--text-dark);
   margin-bottom: 1.5rem;
 }
 
@@ -995,7 +1000,7 @@ filter:brightness(1.3) contrast(3.2);
 }
 .footer-links a,
 .footer-services a {
-  color: rgba(255,255,255,0.5);
+  color: var(--text-light);
   text-decoration: none;
   font-size: 0.9rem;
   transition: var(--transition);
@@ -1010,18 +1015,18 @@ filter:brightness(1.3) contrast(3.2);
   display: flex;
   align-items: center;
   gap: 0.7rem;
-  color: rgba(255,255,255,0.55);
+  color: var(--text-light);
   font-size: 0.9rem;
   margin-bottom: 0.75rem;
 }
 .footer-contact p i { color: var(--highlight); width: 16px; }
-.footer-contact .btn { margin-top: 1.25rem; color: var(--white); border-color: rgba(255,255,255,0.3); }
+.footer-contact .btn { margin-top: 1.25rem; color: var(--primary); border-color: rgba(255,255,255,0.3); }
 .footer-contact .btn:hover { background: var(--highlight); border-color: var(--highlight); color: var(--primary); }
 
 .footer-bottom {
   text-align: center;
   padding: 1.5rem 2rem;
-  color: rgba(255,255,255,0.3);
+  color:var(--text-light);
   font-size: 0.82rem;
 }
 
