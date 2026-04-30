@@ -40,6 +40,8 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 
+
+
   /* ──────────────────────────────
      2. SCROLL SPY – active nav link
   ────────────────────────────── */
@@ -335,4 +337,58 @@ document.addEventListener('DOMContentLoaded', () => {
   handleScrollSpy();
   handleBackToTop();
 
-}); // end DOMContentLoaded
+}); 
+/* ──────────────────────────────
+   10. LOGO SCROLL ANIMATION
+   Left corner → center of navbar on scroll down
+   Center → left corner on scroll back up
+────────────────────────────── */
+(function () {
+  const navLogo       = document.getElementById('nav-logo');
+  const navContainer  = document.querySelector('.nav-container');
+  if (!navLogo || !navContainer) return;
+
+  // How many px of scroll until animation is complete
+  const TRIGGER_DISTANCE = 200;
+
+  // Easing: slow start, fast middle, slow end
+  function easeInOut(t) {
+    return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+  }
+
+  let rafId = null;
+
+  function updateLogoPosition() {
+    const scrollY    = Math.min(window.scrollY, TRIGGER_DISTANCE);
+    const rawProgress = scrollY / TRIGGER_DISTANCE;          // 0 → 1
+    const progress    = easeInOut(rawProgress);              // eased 0 → 1
+
+    // Logo width as rendered (accurate, works at any screen size)
+    const logoWidth      = navLogo.offsetWidth;
+    const containerWidth = navContainer.offsetWidth;
+    const containerLeft  = navContainer.getBoundingClientRect().left;
+
+    // START: logo left-edge at 2rem (32px) inside the container
+    const startLeft = 32;
+
+    // END: logo centered inside the container
+    //   center of container  →  subtract half logo width  →  gives left-edge position
+    const endLeft = (containerWidth / 2) - (logoWidth / 2);
+
+    // Interpolate between start and end
+    const currentLeft = startLeft + (endLeft - startLeft) * progress;
+
+    navLogo.style.left = currentLeft + 'px';
+
+    rafId = null;
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!rafId) {
+      rafId = requestAnimationFrame(updateLogoPosition);
+    }
+  }, { passive: true });
+
+  // Run once on load so logo starts in the correct position
+  updateLogoPosition();
+})();

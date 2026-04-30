@@ -9,26 +9,30 @@
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;900&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/animejs/lib/anime.min.js"></script>
 </head>
 <body>
 
   <!-- ══════════════════════════ NAVBAR ══════════════════════════ -->
   <nav class="navbar" id="navbar">
     <div class="nav-container">
-      <a href="#home" class="nav-logo">
+      
+      <a href="#home" class="nav-logo" id="nav-logo">
         <img src="assets/logo.svg" alt="VIGICON Logo" class="logo-img"/>
       </a>
+      
       <ul class="nav-menu" id="navMenu">
-        <li><a href="#home" class="nav-link active">Home</a></li>
-        <li><a href="#about" class="nav-link">About Us</a></li>
-        <li><a href="#services" class="nav-link">Services</a></li>
-        <li><a href="#contact" class="nav-link">Contact Us</a></li>
+        <li><a href="#home" class="nav-link active" style="color: var(--accent);">Home</a></li>
+        <li><a href="#about" class="nav-link" style="color: var(--accent);">About Us</a></li>
+        <li><a href="#services" class="nav-link" style="color: var(--accent);">Services</a></li>
+        <li><a href="#contact" class="nav-link" style="color: var(--accent);">Contact Us</a></li>
       </ul>
       <button class="hamburger" id="hamburger" aria-label="Toggle menu">
         <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
+  
 
   <!-- ══════════════════════════ HERO ══════════════════════════ -->
   <section class="hero" id="home">
@@ -50,11 +54,11 @@
         <a href="#contact" class="btn btn-outline"><i class="fas fa-calendar-check"></i> Get Consultation</a>
       </div>
       <div class="hero-stats">
-        <div class="stat"><span class="stat-num">160+</span><span class="stat-label">Projects Done</span></div>
+        <div class="stat"><span class="stat-num">80+</span><span class="stat-label">Projects Done</span></div>
         <div class="stat-divider"></div>
-        <div class="stat"><span class="stat-num">500+</span><span class="stat-label">Happy Clients</span></div>
+        <div class="stat"><span class="stat-num">100+</span><span class="stat-label">Happy Clients</span></div>
         <div class="stat-divider"></div>
-        <div class="stat"><span class="stat-num">19+</span><span class="stat-label">Years Experience</span></div>
+        <div class="stat"><span class="stat-num">28+</span><span class="stat-label">Years Experience</span></div>
       </div>
     </div>
     <div class="hero-visual">
@@ -134,7 +138,7 @@
           </svg>
         </div>
         <div class="about-feature-cards">
-          <div class="af-card"><i class="fas fa-check-circle"></i> ISO Certified Systems</div>
+          <!-- <div class="af-card"><i class="fas fa-check-circle"></i> ISO Certified Systems</div> -->
           <div class="af-card"><i class="fas fa-check-circle"></i> 24/7 Support</div>
           <div class="af-card"><i class="fas fa-check-circle"></i> Nationwide Deployment</div>
         </div>
@@ -301,7 +305,8 @@
             <div class="ci-icon"><i class="fas fa-envelope"></i></div>
             <div class="ci-content">
               <span class="ci-label">Email</span>
-              <a href="mailto:vilas@vigiconservices.com " class="ci-value">vilas@vigiconservices.com </a>
+              <a href="mailto:vilas@vigiconservices.com " class="ci-value">vilas@vigiconservices.com  </a> <br>
+              <a href="mailto:vigiconenterprises@gmail.com" class="ci-value">vigiconenterprises@gmail.com</a>
             </div>
           </div>
           <div class="contact-item">
@@ -315,7 +320,7 @@
             <div class="ci-icon"><i class="fas fa-map-pin"></i></div>
             <div class="ci-content">
               <span class="ci-label">Address</span>
-              <span class="ci-value">Pune, Maharashtra<br>411058</span>
+              <span class="ci-value">408, Audumer apartment,near navasha Maruti mandir sinhagad road Pune, Maharashtra<br>411030</span>
             </div>
         </div>
       </div>
@@ -399,6 +404,7 @@
         <h4>Get In Touch</h4>
         <p><i class="fas fa-phone"></i> +91 9309961807</p>
         <p><i class="fas fa-envelope"></i> vilas@vigiconservices.com </p>
+        <p><i class="fas fa-envelope"></i> vigiconenterprises@gmail.com</p>
         <a href="#contact" class="btn btn-outline btn-sm">Request a Quote</a>
       </div>
     </div>
@@ -440,5 +446,6 @@
   <button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
 
   <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/animejs/lib/anime.min.js"></script>
 </body>
 </html>
